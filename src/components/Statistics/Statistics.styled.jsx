@@ -5,6 +5,8 @@ export const Container = styled.section`
   padding: 0 15px;
   margin: 0 auto;
   text-align: center;
+  background-color: #ececec;
+  border-radius: 5px;
 `;
 
 export const StatList = styled.ul`

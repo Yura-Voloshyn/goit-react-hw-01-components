@@ -5,13 +5,13 @@ export const TransactionTable = styled.table`
   padding: 15px;
   margin: 0 auto;
   border-collapse: collapse;
-  border: 3px solid gray;
+  border: 2px solid gray;
 `;
 
 export const Th = styled.th`
   padding: 20px;
   width: 150px;
-  border: 3px solid gray;
+  border: 1px solid rgb(240, 240, 240);
   background-color: rgb(0, 170, 162);
   color: white;
 `;
@@ -19,13 +19,11 @@ export const Th = styled.th`
 export const Td = styled.th`
   padding: 10px 20px;
   font-weight: normal;
+  border: 1px solid rgb(240, 240, 240);
 `;
 // text-align: left;
 export const Tbody = styled.tbody`
   & > :nth-of-type(odd) {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(220, 220, 220);
   }
 `;
-
-// background-color: #fff;
-//   background-color: rgb(216, 216, 216);
