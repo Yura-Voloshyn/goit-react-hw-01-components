@@ -6,10 +6,12 @@ import FriendList from './FriendList/FriendList';
 import friends from './jsonData/friends.json';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 import transactions from './jsonData/transactions.json';
+// import { css } from 'styled-components';
+import { Container } from '../components/App.styled.jsx';
 
 const App = () => {
   return (
-    <div>
+    <Container>
       <UserProfile
         username={user.username}
         tag={user.tag}
@@ -21,7 +23,7 @@ const App = () => {
       <StatsData stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </div>
+    </Container>
   );
 };
 

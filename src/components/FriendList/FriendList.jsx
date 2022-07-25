@@ -15,22 +15,37 @@
 //     </ul>
 //   );
 // };
+import PropTypes from 'prop-types';
+import {
+  Container,
+  FriendCard,
+  FriendName,
+  FriendAvatar,
+  FriendOnlineStatus,
+} from 'components/FriendList/FriendList.styled';
+
 const FriendList = ({ friends }) => {
   return (
-    <ul className="friend-list">
+    <Container>
       {friends.map(friend => (
-        <li key={friend.id} className="item">
-          <span className={friend.isOnline ? 'active' : 'inactive'}></span>
-          <img
-            className="avatar"
-            src={friend.avatar}
-            alt={friend.name}
-            width="48"
-          />
-          <p className="name">{friend.name}</p>
-        </li>
+        <FriendCard key={friend.id}>
+          <FriendOnlineStatus isOnline={friend.isOnline}></FriendOnlineStatus>
+          <FriendAvatar src={friend.avatar} alt={friend.name} />
+          <FriendName>{friend.name}</FriendName>
+        </FriendCard>
       ))}
-    </ul>
+    </Container>
   );
 };
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ),
+};
+
 export default FriendList;
